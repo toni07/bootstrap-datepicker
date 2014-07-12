@@ -498,7 +498,6 @@
 		setUTCDate: alias('setUTCDates'),
 
 		setValue: function(){
-			console.log('##setting value for input');
 			var formatted = this.getFormattedDate();
 			if (!this.isInput){
 				if (this.component){
@@ -508,6 +507,7 @@
 			else {
 				this.element.val(formatted).change();
 			}
+			this.hide();
 		},
 
 		getFormattedDate: function(format){
