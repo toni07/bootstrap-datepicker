@@ -91,6 +91,7 @@
 		this._process_options(options);
 
 		this.element = $(element);
+		this.isShown = false;
 		this.isInline = false;
 		this.isInput = this.element.is('input');
 		this.component = this.element.is('.date') ? this.element.find('.add-on, .input-group-addon, .btn') : false;
@@ -405,6 +406,16 @@
 					return DPGlobal.formatDate(date, format, this.o.language);
 				}, this)
 			});
+		},
+		
+		toggle: function(){
+			if(!this.isShown){
+				this.show();
+			}
+			else{
+				this.hide();
+			}
+			this.isShown = !this.isShown;
 		},
 
 		show: function(){
